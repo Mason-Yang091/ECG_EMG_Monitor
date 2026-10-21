@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="#F5F7FA">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- App Title -->
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ECG / EMG Monitor"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:textColor="#17365D"
+            android:gravity="center"
+            android:layout_marginBottom="20dp"/>
+
+        <!-- Bluetooth section -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bluetooth Connection"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#222222"/>
+
+        <TextView
+            android:id="@+id/tvBluetoothStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Status: Disconnected"
+            android:textSize="16sp"
+            android:textColor="#D32F2F"
+            android:layout_marginTop="10dp"/>
+
+        <Spinner
+            android:id="@+id/spinnerDevices"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+
+            <Button
+                android:id="@+id/btnRefresh"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Refresh"/>
+
+            <Button
+                android:id="@+id/btnConnect"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:text="Connect"/>
+
+            <Button
+                android:id="@+id/btnDisconnect"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:text="Disconnect"
+                android:enabled="false"/>
+
+        </LinearLayout>
+
+        <!-- Signal mode -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Signal Type"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#222222"
+            android:layout_marginTop="24dp"/>
+
+        <RadioGroup
+            android:id="@+id/radioSignalMode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radioECG"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ECG"
+                android:checked="true"/>
+
+            <RadioButton
+                android:id="@+id/radioEMG"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="EMG"
+                android:layout_marginStart="20dp"/>
+
+        </RadioGroup>
+
+        <!-- Waveform -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Real-time Waveform"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#222222"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"/>
+
+        <FrameLayout
+            android:id="@+id/waveformContainer"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:background="#FFFFFF"
+            android:padding="8dp">
+
+            <TextView
+                android:id="@+id/tvWavePlaceholder"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="Waiting for signal..."
+                android:textSize="16sp"
+                android:textColor="#888888"/>
+
+        </FrameLayout>
+
+        <!-- ADC data -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Signal Information"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#222222"
+            android:layout_marginTop="24dp"/>
+
+        <TextView
+            android:id="@+id/tvADCValue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ADC Value: --"
+            android:textSize="18sp"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:id="@+id/tvVoltage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Voltage: -- V"
+            android:textSize="18sp"
+            android:layout_marginTop="8dp"/>
+
+        <TextView
+            android:id="@+id/tvSampleRate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sample Rate: -- Hz"
+            android:textSize="18sp"
+            android:layout_marginTop="8dp"/>
+
+        <TextView
+            android:id="@+id/tvSampleCount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Received Samples: 0"
+            android:textSize="18sp"
+            android:layout_marginTop="8dp"/>
+
+        <Button
+            android:id="@+id/btnDemo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Start Demo Mode"
+            android:layout_marginTop="24dp"/>
+
+    </LinearLayout>
+</ScrollView>
